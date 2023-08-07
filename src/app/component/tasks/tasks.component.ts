@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { TASK } from "../../db/mock-task";
 import { MockTask } from "../../models/mock-task-model";
 import { TaskService } from "../../services/task.service";
+import { UiService } from "../../services/ui.service";
+import { Subscription } from "rxjs";
+
 @Component({
   selector: "app-tasks",
   templateUrl: "./tasks.component.html",
@@ -9,8 +12,14 @@ import { TaskService } from "../../services/task.service";
 })
 export class TasksComponent implements OnInit {
   tasks: MockTask[] = [];
+  listShowStatus: boolean = true;
+  subscription: Subscription;
 
-  constructor(private taskService: TaskService) {}
+  constructor(private taskService: TaskService, private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.listShowStatus = value));
+  }
 
   ngOnInit() {
     this.taskService

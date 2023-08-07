@@ -11,7 +11,7 @@ export class AddTaskComponent implements OnInit {
 
   id: number = Math.floor(Math.random() * 1000000);
   text: string;
-  day: string;
+  day: string = "Mar 32, 2023 3:30 PM";
   reminder: boolean = false;
 
   constructor() {}
@@ -21,7 +21,7 @@ export class AddTaskComponent implements OnInit {
   makeFormValueToDefault() {
     this.id = Math.floor(Math.random() * 10000000);
     this.text = "";
-    this.day = "";
+    this.day = "Mar 32, 2023 3:30 PM";
     this.reminder = false;
   }
 
@@ -32,7 +32,6 @@ export class AddTaskComponent implements OnInit {
       day: this.day,
       reminder: this.reminder,
     };
-    console.log("postObject", postObject);
     this.postTaskFun.emit(postObject);
     // After saving make state to default
     this.makeFormValueToDefault();

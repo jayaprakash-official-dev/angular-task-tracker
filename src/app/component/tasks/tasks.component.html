@@ -3,13 +3,15 @@
     <app-add-task (postTaskFun)="postTask($event)"></app-add-task>
   </div>
   <div class="w-50">
-    <ul class="list-group">
-      <app-task-item
-        *ngFor="let task of tasks"
-        (onDeleteFn)="deleteTask(task)"
-        (doubleClickFn)="toggleReminder(task)"
-        [task]="task"
-      ></app-task-item>
-    </ul>
+    <ng-container *ngIf="listShowStatus">
+      <ul class="list-group">
+        <app-task-item
+          *ngFor="let task of tasks"
+          (onDeleteFn)="deleteTask(task)"
+          (doubleClickFn)="toggleReminder(task)"
+          [task]="task"
+        ></app-task-item>
+      </ul>
+    </ng-container>
   </div>
 </div>
