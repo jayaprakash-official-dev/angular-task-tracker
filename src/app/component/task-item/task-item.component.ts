@@ -8,6 +8,7 @@ import { MockTask } from "../../models/mock-task-model";
 export class TaskItemComponent implements OnInit {
   @Input() task: MockTask;
   @Output() onDeleteFn: EventEmitter<MockTask> = new EventEmitter();
+  @Output() doubleClickFn: EventEmitter<MockTask> = new EventEmitter();
 
   constructor() {}
 
@@ -15,5 +16,9 @@ export class TaskItemComponent implements OnInit {
 
   onDelete(task: MockTask) {
     this.onDeleteFn.emit(task);
+  }
+
+  doubleClick(task: MockTask) {
+    this.doubleClickFn.emit(task);
   }
 }

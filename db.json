@@ -10,7 +10,7 @@
       "id": 2,
       "text": "Go to Play ground",
       "day": "May 2th at 2 PM",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 3,
@@ -22,13 +22,13 @@
       "id": 4,
       "text": "Read think link a monk - book",
       "day": "May 2th at 2 PM",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 5,
       "text": "I am sad",
       "day": "May 2th at 2 PM",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 6,
@@ -46,18 +46,24 @@
       "id": 8,
       "text": "Ram is the manager at @goavega",
       "day": "May 2th at 2 PM",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 9,
       "text": "2012 movie was very good to watch",
       "day": "May 2th at 2 PM",
-      "reminder": false
+      "reminder": true
     },
     {
       "id": 10,
       "text": "this is the last dataI",
       "day": "May 2th at 2 PM",
+      "reminder": false
+    },
+    {
+      "id": 542118,
+      "text": "I am testing",
+      "day": "Mar 3rd 2023",
       "reminder": true
     }
   ]

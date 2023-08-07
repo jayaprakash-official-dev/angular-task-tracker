@@ -1,0 +1,54 @@
+<div class="me-5">
+  <form>
+    <div class="mb-3">
+      <label class="form-label">Tracking Number</label>
+      <input
+        type="text"
+        name="id"
+        [(ngModel)]="id"
+        id="id"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Task</label>
+      <input
+        type="text"
+        name="text"
+        [(ngModel)]="text"
+        id="text"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Date & Time</label>
+      <input
+        type="text"
+        name="day"
+        [(ngModel)]="day"
+        id="day"
+        class="form-control"
+      />
+    </div>
+    <div class="mb-3">
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          name="reminder"
+          [(ngModel)]="reminder"
+          id="reminder"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >Want to set Reminder ?
+        </label>
+      </div>
+    </div>
+    <app-button
+      (btnClick)="onSubmit()"
+      name="Save Task"
+      color="green"
+    ></app-button>
+  </form>
+</div>

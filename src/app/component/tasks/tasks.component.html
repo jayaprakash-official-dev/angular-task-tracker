@@ -1,7 +1,15 @@
-<ul class="list-group">
-  <app-task-item
-    *ngFor="let task of tasks"
-    (onDeleteFn)="deleteTask(task)"
-    [task]="task"
-  ></app-task-item>
-</ul>
+<div class="d-flex flex-row justify-content-between">
+  <div class="w-50">
+    <app-add-task (postTaskFun)="postTask($event)"></app-add-task>
+  </div>
+  <div class="w-50">
+    <ul class="list-group">
+      <app-task-item
+        *ngFor="let task of tasks"
+        (onDeleteFn)="deleteTask(task)"
+        (doubleClickFn)="toggleReminder(task)"
+        [task]="task"
+      ></app-task-item>
+    </ul>
+  </div>
+</div>
