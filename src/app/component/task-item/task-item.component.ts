@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { MockTask } from "../../models/mock-task-model";
 @Component({
   selector: "app-task-item",
@@ -7,7 +7,13 @@ import { MockTask } from "../../models/mock-task-model";
 })
 export class TaskItemComponent implements OnInit {
   @Input() task: MockTask;
+  @Output() onDeleteFn: EventEmitter<MockTask> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit() {}
+
+  onDelete(task: MockTask) {
+    this.onDeleteFn.emit(task);
+  }
 }
